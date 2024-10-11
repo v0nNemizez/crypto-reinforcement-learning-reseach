@@ -1,3 +1,3 @@
 # crypto-reinforcement-learning-reseach
 
-masse dokumentasjon <3<3
+masse dokumentasjon <3
