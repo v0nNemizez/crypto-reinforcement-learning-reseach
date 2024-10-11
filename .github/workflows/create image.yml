@@ -28,5 +28,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/SteinTokvam/crypto-reinforcement-learning:latest
-              docker push ghcr.io/SteinTokvam/crypto-reinforcement-learning:latest
+              docker build . --tag ghcr.io/steintokvam/crypto-reinforcement-learning:latest
+              docker push ghcr.io/steintokvam/crypto-reinforcement-learning:latest
