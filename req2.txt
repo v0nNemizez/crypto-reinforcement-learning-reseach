@@ -17,7 +17,7 @@ fonttools==4.54.1
 frozenlist==1.4.1
 fsspec==2024.9.0
 gym-notices==0.0.8
-gymnasium==1.0.0a2  # Fjern denne hvis du bruker Gym. Bruk denne hvis du vil bytte til Gymnasium, men velg en stabil versjon.
+gymnasium  # Fjern denne hvis du bruker Gym. Bruk denne hvis du vil bytte til Gymnasium, men velg en stabil versjon.
 idna==3.10
 Jinja2==3.1.4
 kiwisolver==1.4.7
@@ -40,7 +40,7 @@ Shimmy==2.0.0
 six==1.16.0
 stable_baselines3==2.3.2
 sympy==1.13.3
-torch==2.0.0  # Bruk en stabil versjon som 2.0.0 for bedre kompatibilitet med Stable Baselines3
+torch==2.4.0  # Bruk en stabil versjon som 2.0.0 for bedre kompatibilitet med Stable Baselines3
 typing_extensions==4.12.2
 tzdata==2024.2
 urllib3==2.2.3
