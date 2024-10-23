@@ -15,7 +15,7 @@ def calculate_rsi(prices, window=50):  # Øker vinduet til 50 for minuttsdata
 
     return rsi_normalized
         
-def calculate_sma(self, prices, current_step, window=50):
+def calculate_sma(prices, current_step, window=50):
         # SMA (Simple Moving Average) beregning
         if current_step < window:
             return 0.5  # Hvis det er for tidlig i datasettet, returner en nøytral verdi

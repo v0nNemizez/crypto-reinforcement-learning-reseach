@@ -122,11 +122,11 @@ class CryptoTradingEnv(gym.Env):
 
                 # Gi belønning for å kjøpe når RSI < 0.3 (oversolgt)
                 if rsi < 0.4:
-                    reward += 5  # Stronger reward for buying when the market is oversold
+                    reward += 10  # Stronger reward for buying when the market is oversold
                 elif 0.4 <= rsi < 0.7:
                     reward += 1  # Smaller reward in the neutral range
                 else:
-                    reward -= 5  # Negative reward for unfavorable conditions (overbought)
+                    reward -= -5 # Negative reward for unfavorable conditions (overbought)
 
 
         elif action == 2:  # Selg
@@ -139,7 +139,7 @@ class CryptoTradingEnv(gym.Env):
 
             # Gi belønning for å selge når RSI > 0.7 (overkjøpt)
             if rsi > 0.7:
-                reward += 5  # Sterkere belønning for å selge når markedet er overkjøpt
+                reward += 10  # Sterkere belønning for å selge når markedet er overkjøpt
             elif rsi <= 0.7 and rsi >= 0.4:
                 reward += 1
             else:
