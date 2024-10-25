@@ -139,11 +139,11 @@ class CryptoTradingEnv(gym.Env):
 
             # Gi belønning for å selge når RSI > 0.7 (overkjøpt)
             if rsi > 0.7:
-                reward += 10  # Sterkere belønning for å selge når markedet er overkjøpt
+                reward += 10   # Sterkere belønning for å selge når markedet er overkjøpt
             elif rsi <= 0.7 and rsi >= 0.4:
                 reward += 1
             else:
-                reward -= -5   # Mindre belønning ellers
+                reward -= -100   # Mindre belønning ellers
 
         # Oppdater nettoverdi
         self.net_worth = self.balance + self.crypto_held * current_price
@@ -154,6 +154,14 @@ class CryptoTradingEnv(gym.Env):
         # Gi en liten straff for å holde (ikke handle)
         if action == 0:
             reward -= 0.1
+
+        if self.net_worth > previous_net_worth:
+            reward += (self.net_worth - previous_net_worth) * 0.1  # Belønning basert på vekst
+        else:
+            reward -= (previous_net_worth - self.net_worth) * 0.1  # Straff for å miste verdi
+        
+        #if self.total_trades > (self.total_timesteps / 100):  # Juster grense etter ønsket tradinghyppighet
+        #    reward -= (self.total_trades - (self.total_timesteps / 100)) * 0.5  # Straff for overtrading
 
     # Oppdater total belønning
         self.total_reward += reward

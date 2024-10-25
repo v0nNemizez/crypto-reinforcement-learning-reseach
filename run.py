@@ -1,6 +1,6 @@
 # Importer nødvendige pakker
 import gymnasium as gym
-from stable_baselines3 import PPO, DQN
+from stable_baselines3 import DQN
 from lib.utils.pandas import open_and_convert_data
 from lib.environment.test_env import CryptoTradingEnv
 
@@ -27,7 +27,7 @@ def load_and_run_model(model_path, data):
         env.render()  # Vis tilstanden
 
 # Last inn data fra en CSV-fil eller en pandas DataFrame
-data = open_and_convert_data('./training_data/BTC-2021min.csv')  # Erstatt med riktig filsti
+data = open_and_convert_data('./training_data/BTC-Hourly.csv')  # Erstatt med riktig filsti
 
 # Kall funksjonen med modellstien og dataen
-load_and_run_model("./DQN_model.zip", data)
+load_and_run_model("./DQN_model-hourly.zip", data)

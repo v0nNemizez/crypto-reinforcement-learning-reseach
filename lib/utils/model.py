@@ -24,5 +24,5 @@ def train_model(csv_path: str):
                 tensorboard_log=tensorboard_log_dir)
 
     model.learn(total_timesteps=10000000, log_interval=100)
-    model.save('./DQN_model')
+    model.save('./DQN_model-hourly')
 
